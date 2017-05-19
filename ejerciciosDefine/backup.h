@@ -18,11 +18,13 @@ protected:
 	Win::Textbox tbxArea;
 	Win::Label lb3;
 	Win::Textbox tbxPerimetro;
+	Win::Label lb4;
+	Win::Label lb5;
 protected:
 	Win::Gdi::Font fontArial014A;
 	void GetDialogTemplate(DLGTEMPLATE& dlgTemplate)
 	{
-		dlgTemplate.cx = Sys::Convert::PixelToDlgUnitX(448);
+		dlgTemplate.cx = Sys::Convert::PixelToDlgUnitX(499);
 		dlgTemplate.cy = Sys::Convert::PixelToDlgUnitY(79);
 		dlgTemplate.style = WS_CAPTION | WS_POPUP | WS_SYSMENU | WS_VISIBLE | DS_CENTER | DS_MODALFRAME;
 	}
@@ -36,7 +38,9 @@ protected:
 		lb2.Create(NULL, L"Area", WS_CHILD | WS_VISIBLE | SS_LEFT | SS_WINNORMAL, 275, 5, 60, 25, hWnd, 1003);
 		tbxArea.Create(WS_EX_CLIENTEDGE, NULL, WS_CHILD | WS_TABSTOP | WS_VISIBLE | ES_AUTOHSCROLL | ES_LEFT | ES_WINNORMALCASE, 336, 5, 105, 25, hWnd, 1004);
 		lb3.Create(NULL, L"Perimetro", WS_CHILD | WS_VISIBLE | SS_LEFT | SS_WINNORMAL, 275, 44, 63, 25, hWnd, 1005);
-		tbxPerimetro.Create(WS_EX_CLIENTEDGE, NULL, WS_CHILD | WS_TABSTOP | WS_VISIBLE | ES_AUTOHSCROLL | ES_LEFT | ES_WINNORMALCASE, 338, 47, 63, 25, hWnd, 1006);
+		tbxPerimetro.Create(WS_EX_CLIENTEDGE, NULL, WS_CHILD | WS_TABSTOP | WS_VISIBLE | ES_AUTOHSCROLL | ES_LEFT | ES_WINNORMALCASE, 338, 47, 103, 25, hWnd, 1006);
+		lb4.Create(NULL, L"sq-cm", WS_CHILD | WS_VISIBLE | SS_LEFT | SS_WINNORMAL, 441, 8, 51, 25, hWnd, 1007);
+		lb5.Create(NULL, L"cm", WS_CHILD | WS_VISIBLE | SS_LEFT | SS_WINNORMAL, 439, 47, 36, 25, hWnd, 1008);
 		fontArial014A.Create(L"Arial", 14, false, false, false, false);
 		lb1.Font = fontArial014A;
 		tbxEntrada.Font = fontArial014A;
@@ -45,6 +49,8 @@ protected:
 		tbxArea.Font = fontArial014A;
 		lb3.Font = fontArial014A;
 		tbxPerimetro.Font = fontArial014A;
+		lb4.Font = fontArial014A;
+		lb5.Font = fontArial014A;
 	}
 	//_________________________________________________
 	void btCalcular_Click(Win::Event& e);
